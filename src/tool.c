@@ -10,7 +10,7 @@
     do {                                                                                    \
         type f_##name = &on_##name;                                                         \
         if (ompt_set_callback(name, (ompt_callback_t)f_##name) == ompt_set_never)           \
-            fprintf(stderr, "Could not register callback '" #name "' (ompt_set_never)");    \
+            fprintf(stderr, "Could not register callback '" #name "' (ompt_set_never)\n");  \
     } while(0)
 # define REGISTER_CALLBACK(name) REGISTER_CALLBACK_T(name, name##_t)
 
@@ -43,6 +43,6 @@ ompt_start_tool(
     const char * runtime_version)
 {
     static ompt_start_tool_result_t data = {&ompt_initialize, &ompt_finalize, (ompt_data_t) NULL};
-    fprintf(stderr, "%s: OpenMP %d and runtime %s", TOOL_NAME, omp_version, runtime_version);
+    fprintf(stderr, "%s: OpenMP %d and runtime %s\n", TOOL_NAME, omp_version, runtime_version);
     return &data;
 }
