@@ -1,7 +1,4 @@
-# The mpc-trace OMPT tool
-Requires a valid mpc-trace installation
-
-Then run
+# The do-nothing OMPT tool
 ```
-cmake -DMPC_TRACE_INSTALL=$INSTALL ..
+mkdir build && cd build && cmake .. && make -j
 ```
