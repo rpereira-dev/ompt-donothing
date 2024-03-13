@@ -20,7 +20,6 @@ void
 ompt_finalize(ompt_data_t * tool_data)
 {
     (void)tool_data;
-//    MPCT_DEBUG("Tool finalize");
 }
 
 int ompt_initialize(
@@ -28,7 +27,6 @@ int ompt_initialize(
     int initial_device_num,
     ompt_data_t * tool_data)
 {
-//    MPCT_DEBUG("Tool initialize");
     (void) initial_device_num;
     (void) tool_data;
     ompt_set_callback_t ompt_set_callback = (ompt_set_callback_t) lookup("ompt_set_callback");
